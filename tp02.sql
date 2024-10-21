@@ -1,10 +1,9 @@
 use compta;
 
--- INSERTION DES VALUERS DANS LA TABLE --
 INSERT INTO
     FOURNISSEUR (id, nom)
 VALUES
-    (1, 'Francaise d''import');
+    (1, 'Française d''import');
 
 (2, 'FDM SA');
 
@@ -45,8 +44,8 @@ VALUES
     6,
     'D03',
     'Boulon acier zingué 4 x 40mm (sachet de 10)',
-    1.8,
-    1
+    185.25,
+    3
 );
 
 (7, 'A03', 'Perceuse à colonne', 185.25, 3);
@@ -58,7 +57,7 @@ VALUES
 (10, 'F04', 'Fraises d’encastrement', 8.14, 2);
 
 INSERT INTO
-    BON (id, numeron, delai, id_fou);
+    BON (id, numero, delai, id_fou);
 
 VALUES
     (1, 1, 3, 1);
