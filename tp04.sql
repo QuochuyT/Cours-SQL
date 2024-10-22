@@ -1,5 +1,6 @@
 USE COMPTA;
 
+-- a.
 SELECT
     *
 FROM
@@ -7,6 +8,7 @@ FROM
 ORDER BY
     DESIGNATION ASC;
 
+-- b.
 SELECT
     *
 FROM
@@ -14,6 +16,7 @@ FROM
 ORDER BY
     PRIX DESC;
 
+-- c.
 SELECT
     *
 FROM
@@ -23,6 +26,7 @@ WHERE
 ORDER BY
     PRIX ASC;
 
+-- d.
 SELECT
     *
 FROM
@@ -30,6 +34,7 @@ FROM
 WHERE
     DESIGNATION LIKE '%SACHET%';
 
+-- e.
 SELECT
     *
 FROM
@@ -37,6 +42,7 @@ FROM
 WHERE
     LOWER(DESIGNATION) LIKE '%SACHET%';
 
+-- f.
 SELECT
     *
 FROM
@@ -48,6 +54,7 @@ ORDER BY
     FOURNISSEUR.NOM ASC,
     ARTICLE.PRIX DESC;
 
+-- g.
 SELECT
     *
 FROM
@@ -57,6 +64,7 @@ WHERE
     ARTICLE.ID_FOU = FOURNISSEUR.ID
     AND FOURNISSEUR.NOM = 'Dubois & Fils';
 
+-- h.
 SELECT
     AVG(PRIX) AS MOYENNE_PRIX
 FROM
@@ -66,6 +74,7 @@ WHERE
     ARTICLE.ID_FOU = FOURNISSEUR.ID
     AND FOURNISSEUR.NOM = 'Dubois & Fils';
 
+-- i.
 SELECT
     f.NOM,
     AVG(a.prix)
@@ -77,6 +86,7 @@ WHERE
 GROUP BY
     f.NOM;
 
+-- j.
 SELECT
     *
 FROM
@@ -84,6 +94,7 @@ FROM
 WHERE
     date_cmde BETWEEN '2019-03-01' AND '2019-04-05 12:00:00'  '12:00:00';
 
+-- k.
 SELECT
     *
 FROM
@@ -95,8 +106,10 @@ WHERE
     AND COMPO.ID = ARTICLE.ID_FOU
     AND DESIGNATION LIKE '%BOULON%';
 
+-- l.
 SELECT
-    *
+    f.nom,
+    a.designation
 FROM
     BON,
     COMPO,
@@ -108,6 +121,7 @@ WHERE
     AND COMPO.ID_ART = ARTICLE.ID
     AND DESIGNATION like '%Boulon%';
 
+-- m.
 SELECT
     ID_BON,
     SUM(QTE * PRIX)
@@ -121,6 +135,7 @@ where
 GROUP BY
     ID_BON;
 
+-- n.
 SELECT
     ID_BON,
     SUM(QTE)
@@ -134,6 +149,7 @@ WHERE
 GROUP BY
     ID_BON;
 
+-- o.
 SELECT
     ID_BON,
     SUM(QTE)
@@ -149,6 +165,7 @@ GROUP BY
 HAVING
     SUM(QTE) > 25;
 
+-- p.
 SELECT
     ID_BON,
     SUM(QTE * PRIX)
